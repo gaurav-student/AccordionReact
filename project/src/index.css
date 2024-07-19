@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  /* height: 800px;
+  width: 800px; */
+}
+
+.accordion {
+  margin: 3px;
+}
+.accordion > span {
+  margin-left: 20px;
+}
