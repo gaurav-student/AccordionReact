@@ -1,15 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.App {
-  /* height: 800px;
-  width: 800px; */
+/* styles.css */
+.accordion-item {
+  border: 1px solid #ddd;
+  margin: 5px 0;
 }
 
-.accordion {
-  margin: 3px;
+.accordion-title {
+  background-color: #f7f7f7;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.accordion > span {
-  margin-left: 20px;
+
+.accordion-content {
+  padding: 10px;
+  border-top: 1px solid #ddd;
 }
