@@ -1,25 +1,29 @@
-import Answer from "./Answer";
-import "./App.css";
-import Question from "./Question";
+// App.js
+import React, { useState } from "react";
+import Accordion from "./Accordion";
 import data from "./data";
-import { useEffect, useState } from "react";
-function App() {
-  const [adata, setAdata] = useState([]);
+import "./index.css";
 
-  useEffect(() => {
-    setAdata(data);
-  }, []);
+const App = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <div className="App">
-      {adata.map((val) => {
-        return (
-          <div key={val.id}>
-            <Question ques={val.question} ans={val.answer} />
-          </div>
-        );
-      })}
+      {data.map((item, index) => (
+        <Accordion
+          key={item.id}
+          question={item.question}
+          answer={item.answer}
+          isOpen={index === openIndex}
+          onToggle={() => toggleAccordion(index)}
+        />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
